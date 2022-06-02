@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // Connection MongoDB Database
-mongoose.connect("mongodb://localhost:27017/blog-v2");
+mongoose.connect("mongodb+srv://admin-gabi:604916@cluster0.7l9icfk.mongodb.net/blog-v2");
 
 // Creating MongoDB Schema
 const blogPostSchema = new mongoose.Schema({
