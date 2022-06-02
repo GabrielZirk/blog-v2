@@ -79,7 +79,6 @@ app.post("/compose", (req, res) => {
 app.get("/posts/:postID", (req, res) => {
   
   blogPost.find({_id : req.params.postID}, (err, post) => {
-    console.log(post);
     res.render("post", {ele : post[0]})
   })
 })
