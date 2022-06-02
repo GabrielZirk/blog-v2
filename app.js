@@ -20,7 +20,7 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI);
 
 // Local DB for dev
-//mongoose.connect("mongodb://localhost:27017/blog-v2");
+// mongoose.connect("mongodb://localhost:27017/blog-v2");
 
 // Creating MongoDB Schema
 const blogPostSchema = new mongoose.Schema({
@@ -83,16 +83,9 @@ app.post("/compose", (req, res) => {
 
 // - Blog article
 app.get("/posts/:postID", (req, res) => {
-<<<<<<< HEAD
   
   blogPost.find({_id : req.params.postID}, (err, post) => {
     res.render("post", {ele : post[0]})
-=======
-
-  blogPost.find({ _id: req.params.postID }, (err, post) => {
-    console.log(post);
-    res.render("post", { ele: post[0] })
->>>>>>> production_blogv2
   })
 })
 
