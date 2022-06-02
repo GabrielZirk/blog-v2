@@ -2,9 +2,10 @@
 <h1>Home</h1>
 <p><%= homeStartingContent %></p>
 
-<% posts.forEach((ele) => { %>
-  <h2><%= ele.title %></h2>
-  <p><%= ele.body.substring(0, 100) %> ... <a href="/posts/<%= ele.title %>">Read more</a></p>
-<% }) %>
+<% posts.forEach((ele) => { %>  
+    <h2><%= ele.title %></h2>
+    <p><%= ele.body.substring(0, 100) %> ... <a href="/posts/<%= ele._id %>">Read more</a></p>
+  <% }) %>
+
 
 <%- include("partials/footer") %>
