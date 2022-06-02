@@ -3,7 +3,7 @@
 <p><%= homeStartingContent %></p>
 
 <% posts.forEach((ele) => { %>  
-    <h2><%= ele.title %></h2>
+    <h1><%= ele.title %></h1> <h6><%= ele.date %></h6> 
     <p><%= ele.body.substring(0, 100) %> ... <a href="/posts/<%= ele._id %>">Read more</a></p>
   <% }) %>
 

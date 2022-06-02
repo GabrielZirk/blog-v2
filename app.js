@@ -17,10 +17,16 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Connection MongoDB Database
-mongoose.connect("mongodb+srv://admin-gabi:604916@cluster0.7l9icfk.mongodb.net/blog-v2");
+mongoose.connect(process.env.MONGODB_URI);
+
+// Local DB for dev
+//mongoose.connect("mongodb://localhost:27017/blog-v2");
 
 // Creating MongoDB Schema
 const blogPostSchema = new mongoose.Schema({
+  date: {
+    type: String
+  },
   title: {
     type: String,
     required: true
@@ -66,6 +72,7 @@ app.get("/compose", (req, res) => {
 
 app.post("/compose", (req, res) => {
   const post = new blogPost({
+    date: new Date().toDateString(),
     title: req.body.postTitle,
     body: req.body.postBody
   });
